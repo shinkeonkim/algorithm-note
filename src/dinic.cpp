@@ -26,7 +26,7 @@ typedef vector <vector <ull>> ullv2;
 
 struct Edge {
     ll v, capacity, rev;
-    Edge(int v, int capacity, int rev): v(v), capacity(capacity), rev(rev) {}
+    Edge(ll v, ll capacity, ll rev): v(v), capacity(capacity), rev(rev) {}
 };
 
 vector<Edge> vt[MAX_V];
@@ -34,9 +34,9 @@ ll level[MAX_V];
 ll work[MAX_V];
 
 
-void addEdge(int start, int end, int capacity) {
-    vt[start].emplace_back(end, capacity, (int)vt[end].size());
-    vt[end].emplace_back(start, capacity, (int)vt[start].size()-1);
+void addEdge(ll start, ll end, ll capacity) {
+    vt[start].emplace_back(end, capacity, (ll)vt[end].size());
+    vt[end].emplace_back(start, capacity, (ll)vt[start].size()-1);
 }
 
 // 레벨 그래프 만드는 BFS
